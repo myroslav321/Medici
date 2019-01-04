@@ -1,0 +1,36 @@
+.section-switcher {
+    display: flex;
+    border: 2px solid $main-color;
+    margin: 20px 0;
+}
+
+.section-switcher__option {
+    display: block;
+    white-space: nowrap;
+    font-size: 12px;
+    flex: 1;
+    color: $main-color;
+    font-weight: 700;
+    height: 52px;
+    line-height: 52px;
+    text-align: center;
+    padding: 0 4px;
+}
+
+.section-switcher__option._active {
+    background: $main-color;
+    color: $white;
+    -webkit-font-smoothing: antialiased;
+}
+
+@media (min-width: 992px) {
+    .section-switcher {
+        display: table;
+    }
+
+    .section-switcher__option {
+        font-size: 14px;
+        display: table-cell;
+        padding: 0 10px;
+    }
+}

@@ -1,0 +1,350 @@
+//======================================================//
+//========= PARTIALS => HEADER =========================//
+//======================================================//
+
+.header {
+    background: $white;
+    padding: 0 15px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    box-shadow: 0 0 10px -2px rgba($main-text-color, 0.3);
+    z-index: 99;
+}
+
+.header-nav__panel {
+    max-width: 1245px;
+    height: 64px;
+    margin: auto;
+    position: relative;
+}
+
+.header-nav__btn {
+    position: absolute;
+    padding: 10px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.header-nav__btn span {
+    display: block;
+    width: 30px;
+    height: 4px;
+    background: $black;
+}
+
+.nav-btn__2 {
+    margin: 4px 0;
+}
+
+.header-nav__logo {
+    max-width: 119px;
+    display: block;
+    margin: auto;
+    padding: 10px;
+}
+
+.header-nav__logo-img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.header-nav__wrp-outer {
+    position: absolute;
+    top: 64px;
+    left: -15px;
+    right: -15px;
+    height: calc(100vh - 64px);
+    background: rgba($black, 0.7);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease 0.3s;
+}
+
+.header-nav__wrp-inner {
+    background: $white;
+    max-width: 225px;
+    height: 100%;
+    padding: 30px 0 15px;
+    overflow: auto;
+    transform: translate3d(-100%, 0, 0);
+    transition: transform 0.3s ease;
+}
+
+._nav-open .header-nav__wrp-outer {
+    opacity: 1;
+    pointer-events: all;
+    transition: opacity 0.3s ease;
+}
+
+._nav-open .header-nav__wrp-inner {
+    transform: translate3d(0, 0, 0);
+    transition: transform 0.3s ease 0.3s;
+}
+
+.header-nav__list {
+    font-family: $font-family-1;
+    background: $white;
+    margin-bottom: 30px;
+}
+
+.header-nav__list-item {
+    width: 100%;
+    display: block;
+    position: relative;
+}
+
+.header-nav__list-item span {
+    display: none;
+}
+
+.header-nav__item-link {
+    color: $main-text-color;
+    font-weight: 300;
+    padding: 15px 25px;
+    position: relative;
+    display: inline-block;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.header-nav__item-link:after {
+    content: '';
+    display: block;
+    border-top: 22px solid transparent;
+    border-bottom: 22px solid transparent;
+    border-left: 18px solid $main-color;
+    position: absolute;
+    right: -18px;
+    top: 0;
+    opacity: 0;
+}
+
+.header-nav__item-link._active {
+    background: $main-color;
+    color: $white;
+}
+
+.header-nav__item-link._active:after {
+    opacity: 1;
+}
+
+// .no-touch .header-nav__item-link {
+//     transition: all 0.3s ease;
+// }
+
+.no-touch .header-nav__item-link:not(_active):hover {
+    color: $main-color;
+}
+
+// additions
+
+.nav-panel__additions {
+    font-family: $font-family-1;
+    color: $main-text-color;
+    text-align: center;
+}
+
+.nav-panel__btn {
+    color: $main-color;
+    font-weight: 300;
+    font-size: 14px;
+    border: 1px solid $main-color;
+    padding: 13px;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+.no-touch .nav-panel__btn {
+    transition: all 0.3s ease;
+}
+
+.no-touch .nav-panel__btn:hover {
+    background: $main-color;
+    color: $white;
+}
+
+.contacts-item {
+    font-size: 11px;
+    padding: 15px 18px;
+    position: relative;
+    text-align: left;
+}
+
+.contacts-item:nth-child(1):before,
+.contacts-item:nth-child(2):after {
+    content: '';
+    display: block;
+    height: 1px;
+    position: absolute;
+    top: 0;
+    left: 8px;
+    right: 8px;
+    background: rgba($main-text-color, 0.3);
+}
+
+.contacts-item:nth-child(2):after {
+    bottom: 0;
+    top: auto;
+}
+
+.contacts-item__heading {
+    display: flex;
+    align-items: center;
+}
+
+.contacts-item__heading i {
+    color: $main-color;
+    font-size: 14px;
+    display: block;
+    margin-right: 5px;
+}
+
+.contacts-item__info {
+    color: $main-color;
+}
+
+.contacts-item p + p {
+    margin-top: 5px;
+}
+
+@media (min-width: 992px) {
+    .nav-panel__btn,
+    .header-nav__btn {
+        display: none;
+    }
+
+    .header-nav__panel {
+        display: flex;
+        height: auto;
+    }
+
+    .header-nav__panel > * {
+        flex: 1;
+    }
+
+    .header-nav__logo {
+        margin: 0 25px 0 0;
+        padding: 15px 0;
+        max-width: 118px;
+    }
+
+    .header-nav__wrp-outer {
+        position: static;
+        height: auto;
+        background: transparent;
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    .header-nav__wrp-inner {
+        padding: 0;
+        display: flex;
+        max-width: none;
+        justify-content: space-between;
+        transform: translate3d(0, 0, 0);
+        overflow: visible;
+    }
+
+    .header-nav__list {
+        display: flex;
+        align-items: center;
+        height: 84px;
+        margin: 0;
+    }
+
+    .header-nav__list-item {
+        margin: 0 5px;
+    }
+
+    .header-nav__item-link {
+        padding: 35px 15px;
+    }
+
+    .header-nav__item-link:after {
+        display: none;
+    }
+
+    .nav-panel__additions {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+    }
+
+    .contacts-item:nth-child(1):before,
+    .contacts-item:nth-child(2):after {
+        display: none;
+    }
+
+    .contacts-item:nth-child(1):before {
+        content: '';
+        display: block;
+        width: 1px;
+        height: calc(100% - 30px);
+        background: rgba($main-text-color, 0.3);
+        position: absolute;
+        left: 0;
+        top: 15px;
+    }
+
+    .arrow-side_left,
+    .arrow-side_right {
+        position: absolute;
+        bottom: -22px;
+        display: block !important;
+        width: 50%;
+        height: 45px;
+        opacity: 0;
+        z-index: 2;
+        overflow: hidden;
+    }
+
+    .arrow-side_left {
+        left: 0;
+
+        &:before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: $main-color;
+            transform: skewX(70deg)
+        }
+    }
+
+    .arrow-side_right {
+        right: 0;
+
+        &:before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: $main-color;
+            transform: skewX(-70deg)
+        }
+    }
+
+    ._active + span + span,
+    ._active + span {
+        opacity: 1;
+    }
+}
+
+@media (min-width: 1200px) {
+    .nav-panel__btn {
+        display: inline-block;
+        margin: 0 20px;
+    }
+
+    .contacts-item {
+        padding: 15px 20px;
+    }
+}
+
+//======================================================//
+//========= HEADER [END] ===============================//
+//======================================================//
