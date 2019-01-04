@@ -1,9 +1,3 @@
-# gulp-starter-kit
-
-If you want to know how to build that kind of startet kit you can watch the YouTube videos I created while working on this starter kit: https://goo.gl/sMFmyN (Note: Videos are in Polish).
-
-## Usage
-
 ### 1. Clone repo
 ```
 git clone https://github.com/marcinkrzeminski/gulp-starter-kit.git
