@@ -114,11 +114,11 @@
 .header-nav__item-link:after {
     content: '';
     display: block;
-    border-top: 22px solid transparent;
-    border-bottom: 22px solid transparent;
-    border-left: 18px solid $main-color;
+    border-top: 24px solid transparent;
+    border-bottom: 24px solid transparent;
+    border-left: 22px solid $main-color;
     position: absolute;
-    right: -18px;
+    right: -22px;
     top: 0;
     opacity: 0;
 }
@@ -194,6 +194,7 @@
 .contacts-item__heading {
     display: flex;
     align-items: center;
+    margin-bottom: 4px;
 }
 
 .contacts-item__heading i {
@@ -205,10 +206,8 @@
 
 .contacts-item__info {
     color: $main-color;
-}
-
-.contacts-item p + p {
-    margin-top: 5px;
+    line-height: 15px;
+    margin: 1px 0;
 }
 
 @media (min-width: 992px) {

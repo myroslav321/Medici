@@ -88,6 +88,12 @@
         display: block !important;
     }
 
+    .service-item__caption-body {
+        color: $white;
+        padding: 10px 20px;
+        -webkit-font-smoothing: antialiased;
+    }
+
     .service-item:hover .service-item__caption {
         transform: translateY(0);
     }
