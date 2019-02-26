@@ -1,5 +1,6 @@
 $(window).on('load', function () {
     App.init()
+    $('body').addClass('_loaded');
 })
 
 var App = {
@@ -51,6 +52,7 @@ var App = {
     teamFilter: function() {
         var $switcher = $('.js__team')
         var $item = $('.team-item')
+        var $description = $('.js__caption-description')
         var filter = function (href) {
             $item.each(function () {
                 $(this).attr('data-team') === href ? $(this).addClass('_active') : $(this).removeClass('_active')
@@ -58,10 +60,12 @@ var App = {
         }
         if ($switcher.length) {
             filter('team-1')
+            $($description.find('.our-team__caption-item')[0]).addClass('_active');
             $switcher.on('click', function (e) {
                 e.preventDefault()
                 $(e.target).addClass('_active').siblings().removeClass('_active')
                 filter($(e.target).attr('href'))
+                $description.find('[data-team="' + $(e.target).attr('href') + '"]').addClass('_active').siblings().removeClass('_active')
             })
         }
     },

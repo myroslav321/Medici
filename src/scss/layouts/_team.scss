@@ -17,6 +17,14 @@
     margin: 15px;
 }
 
+.our-team__caption-item {
+    display: none;
+}
+
+.our-team__caption-item._active {
+    display: block;
+}
+
 @media (min-width: 768px) {
 
     .our-team__wrp-inner {
