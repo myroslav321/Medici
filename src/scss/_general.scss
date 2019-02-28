@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+html {
+    
+}
+
 body {
     padding-top: 64px;
     opacity: 0;
@@ -35,4 +39,17 @@ body._loaded {
     body {
         padding-top: 82px;
     }
+
+    // section {
+    //   opacity: 0;
+    //   visibility: hidden;
+    //   transform: translateY(100px);
+    //   transition: all 0.7s ease-out 1s;
+    // }
+
+    // section._is-visible {
+    //   opacity: 1;
+    //   visibility: visible;
+    //   transform: translateY(0);
+    // }
 }

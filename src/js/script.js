@@ -3,6 +3,10 @@ $(window).on('load', function () {
     $('body').addClass('_loaded');
 })
 
+$(window).on('scroll', function () {
+    // App.isInViewport()
+})
+
 var App = {
 
     init: function () {
@@ -15,7 +19,49 @@ var App = {
         this.teamFilter()
         this.map()
         this.pageScroll()
+        this.counter();
     },
+
+    isInViewport: function () {
+        var scrollTop = $(window).scrollTop();
+        $('section').each(function () {
+            if (!$(this).hasClass('_is-visible')) {
+                if (scrollTop + $(window).height() >= $(this).offset().top) {
+                    $(this).addClass('_is-visible')
+                }
+            }
+        })
+    },
+
+    counter: function () {
+        var isReached = false;
+        var $section = $('.counter-wrp')
+        var offset = $section.offset().top
+        var vh = $(window).height()
+        var istArr = []
+        var $elem = document.querySelectorAll('.counter-item__number');
+        $elem.forEach(function ($item, i) {
+            var counterInst = new Odometer({
+              el: $item,
+              value: i,
+              duration: 4000,
+              format: 'd.ddd'
+            });
+            istArr.push(counterInst)
+        })
+
+        $(window).on('scroll', function () {
+            if (!isReached) {
+                if ($(window).scrollTop() >= offset - (vh - vh/3)) {
+                    isReached = true
+                    $('.counter-item__number').each(function (i) {
+                        istArr[i].update($(this).attr('data-max'))
+                    })
+                }
+            }
+        })
+    },
+
 
     collapsibleItem: function () {
         var $item = $('.js__item-target')
@@ -36,9 +82,13 @@ var App = {
     pageScroll: function () {
         var $nav = $('.js__nav-list')
         if ($nav.length) {
-            $nav.find('a').pageNav({
-                'active_item' : '_active',
-                'scroll_shift': $('.header').outerHeight()
+            $nav.onePageNav({
+                currentClass: '_active',
+                changeHash: false,
+                scrollSpeed: 750,
+                scrollThreshold: 0.1,
+                filter: '',
+                easing: 'swing'
             })
         }
     },
@@ -106,9 +156,23 @@ var App = {
 
     mobileNav: function () {
         var $target = $('.header-nav__btn')
+        var $linkItem = $('.header-nav__item-link')
         $target.on('click', function () {
             $('html').toggleClass('_nav-open')
         })
+        $linkItem.on('click', function () {
+            $('html').removeClass('_nav-open')
+        })
+        $('.nav-panel__btn').on('click', function (e) {
+            e.preventDefault();
+            var _getOffset = function () {
+                return $(window).width() < 992 ? 63 : 86;
+            }
+            // $('html, body').animate({
+            //     scrollTop: $('.feedback').offset().top - _getOffset()
+            // }, 1000)
+        })
+
     },
 
     map: function () {
