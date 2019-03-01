@@ -122,12 +122,18 @@
     .hero-image__subheader {
         font-size: 22px;
         line-height: 27px;
+        transition: all 0.4s ease-out 0.4s;
+        opacity: 0;
+        transform: translateY(50px);
     }
 
     .hero-image__header {
         font-size: 134px;
         line-height: 163px;
         left: -5px;
+        transition: all 0.4s ease-out 0.6s;
+        opacity: 0;
+        transform: translateY(50px);
     }
 
     .hero-image__header:after {
@@ -138,10 +144,27 @@
     .hero-image__description {
         font-size: 15px;
         margin-bottom: 30px;
+        transition: all 0.4s ease-out 0.8s;
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    .hero-image__actions {
+        transition: all 0.4s ease-out 1s;
+        opacity: 0;
+        transform: translateY(50px);
     }
 
     .hero-image__link {
         padding: 21px 14px;
+    }
+
+    ._loaded .hero-image__subheader,
+    ._loaded .hero-image__header,
+    ._loaded .hero-image__description,
+    ._loaded .hero-image__actions {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 

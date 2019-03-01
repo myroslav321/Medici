@@ -5,10 +5,14 @@
 		$(window).on('load', function () {
             App.init()
             $('body').addClass('_loaded');
-        })
-        
-        $(window).on('scroll', function () {
-            // App.isInViewport()
+            if ($('section').length) {
+                $('section').each(function () {
+                    var that = $(this)
+                    $(this).waypoint(function () {
+                        that.addClass('_animate')
+                    }, { offset: '100%'})
+                })
+            }
         })
         
         var App = {
@@ -48,7 +52,7 @@
                     var counterInst = new Odometer({
                       el: $item,
                       value: i,
-                      duration: 4000,
+                      duration: 5000,
                       format: 'd.ddd'
                     });
                     istArr.push(counterInst)

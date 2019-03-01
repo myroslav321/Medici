@@ -40,16 +40,15 @@ body._loaded {
         padding-top: 82px;
     }
 
-    // section {
-    //   opacity: 0;
-    //   visibility: hidden;
-    //   transform: translateY(100px);
-    //   transition: all 0.7s ease-out 1s;
-    // }
+    section {
+      opacity: 0;
+      visibility: hidden;
+      will-change: transform;
+      transition: all 0.7s ease-out 0.6s;
+    }
 
-    // section._is-visible {
-    //   opacity: 1;
-    //   visibility: visible;
-    //   transform: translateY(0);
-    // }
+    section._animate {
+      opacity: 1;
+      visibility: visible;
+    }
 }

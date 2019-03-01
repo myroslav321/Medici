@@ -200,9 +200,10 @@
 
 		scrollTo: function(target, callback) {
             var _getOffset = function () {
-                return $(window).width() < 992 ? 63 : 86;
+				return $(window).width() < 992 ? 63 : 86;
             }
-            var offset = $(target).offset().top - _getOffset()
+			var offset = $(target).offset().top - _getOffset()
+			console.log(_getOffset())
 			$('html, body').animate({
 				scrollTop: offset
 			}, this.config.scrollSpeed, this.config.easing, callback);
