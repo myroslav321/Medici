@@ -9,6 +9,10 @@
     width: 100%;
 }
 
+.counter-item {
+    text-align: center;
+}
+
 .counter-item + .counter-item {
     margin-top: 20px;
 }
@@ -35,7 +39,6 @@
 
     .counter-item {
         width: 50%;
-        text-align: center;
         margin: 15px 0 !important;
         padding: 10px;
     }

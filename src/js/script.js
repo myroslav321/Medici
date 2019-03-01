@@ -167,15 +167,15 @@
                 $linkItem.on('click', function () {
                     $('html').removeClass('_nav-open')
                 })
-                $('.nav-panel__btn').on('click', function (e) {
-                    e.preventDefault();
-                    var _getOffset = function () {
-                        return $(window).width() < 992 ? 63 : 86;
-                    }
-                    // $('html, body').animate({
-                    //     scrollTop: $('.feedback').offset().top - _getOffset()
-                    // }, 1000)
-                })
+                // $('.nav-panel__btn').on('click', function (e) {
+                //     e.preventDefault();
+                //     // var _getOffset = function () {
+                //     //     return $(window).width() < 992 ? 63 : 86;
+                //     // }
+                //     // $('html, body').animate({
+                //     //     scrollTop: $('.feedback').offset().top - _getOffset()
+                //     // }, 1000)
+                // })
         
             },
         

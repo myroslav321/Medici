@@ -134,8 +134,12 @@
     opacity: 1;
 }
 
-.no-touch .header-nav__item-link:not(_active):hover {
+.no-touch .header-nav__list-item:not(._active) a:hover {
     color: $main-color;
+}
+
+.no-touch .header-nav__item-link._active:hover {
+    color: $white !important;
 }
 
 // additions
