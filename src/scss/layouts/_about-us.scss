@@ -40,9 +40,10 @@
 
 .swiper-button-prev,
 .swiper-button-next {
-    width: 62px;
-    height: 62px;
+    width: 62px !important;
+    height: 62px !important;
     background: rgba($black, 0.4);
+    background-image: none;
     display: flex;
     align-items: center;
     justify-content: center;
