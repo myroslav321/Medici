@@ -6,7 +6,7 @@
     background: $footer-background;
     color: $white;
     font-size: 14px;
-    font-weight: 300;
+    font-weight: 400;
     text-align: center;
 }
 
@@ -43,14 +43,14 @@
 
 .footer-info__social p,
 .footer-info__contact-item p {
-    line-height: 20px;
+    line-height: 18px;
     margin: 0;
     color: $white;
 }
 
 .footer-info__social p:first-child,
 .footer-info__contact-item p:first-child {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 .footer-info__contact-item + .footer-info__contact-item {
@@ -78,6 +78,14 @@
     }
 }
 
+.no-touch .footer-info__contact-item a {
+    transition: all 0.3s ease;
+}
+
+.no-touch .footer-info__contact-item a:hover {
+    color: $main-color;
+}
+
 .footer-info__social-item + .footer-info__social-item {
     margin-left: 12px;
 }
@@ -94,7 +102,7 @@
     text-align: center;
     background: darken(saturate($footer-background, 1.05), 7.84);
     color: $white;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 14px;
     padding: 5px 15px;
 }
