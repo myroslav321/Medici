@@ -177,6 +177,10 @@
     .feedback-dark__overlay > div {
         width: 50%;
     }
+
+    .feedback-form .form-actions {
+        text-align: right;
+    }
 }
 
 @media (min-width: 1200px) {
