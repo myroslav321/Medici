@@ -103,7 +103,7 @@
 
 .header-nav__item-link {
     color: $main-text-color;
-    font-weight: 300;
+    font-weight: 400;
     padding: 15px 25px;
     position: relative;
     display: inline-block;
@@ -152,7 +152,7 @@
 
 .nav-panel__btn {
     color: $main-color;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 14px;
     border: 1px solid $main-color;
     padding: 13px;
@@ -173,6 +173,7 @@
     font-size: 11px;
     padding: 15px 18px;
     position: relative;
+    font-weight: 400;
     text-align: left;
 }
 
