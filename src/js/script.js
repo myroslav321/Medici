@@ -18,6 +18,7 @@
         var App = {
         
             init: function () {
+                this.feedback()
                 this.isTouch()
                 this.heroSlider()
                 this.mobileNav()
@@ -28,6 +29,40 @@
                 this.map()
                 this.pageScroll()
                 this.counter();
+            },
+
+            feedback() {
+                var form = $('#feedback');
+
+                function set_ajax() {
+                    $.ajax({
+                        type: "post",
+                        dataType: "json",
+                        url: aj_ajax_url,
+                        data: {
+                            action: "aj_feedback",
+                                nonce: aj_field_nonce,
+                                data: form.serialize()
+                        },
+                        beforeSend: function () {
+                            form.addClass('is-send');
+                        },
+                        success: function (json) {
+                            console.log(json);
+                            
+                            if (json.content === true) {
+                                $('.treasure').addClass('treasure_thank');
+                                form.removeClass('is-send')
+                            }
+                        }
+                    });
+                }
+                
+
+                $('#feedback-send').on('click', function (e) {
+                    e.preventDefault();
+                    set_ajax();
+                });
             },
         
             isInViewport: function () {
@@ -185,12 +220,14 @@
         
             map: function () {
                 var $check = $('.js__check-item')
-                var uluru = JSON.parse($check[0].value)
+                var uluru = JSON.parse($($check[0]).attr('data-value'))
+              
                 var map = new google.maps.Map(document.getElementById('map'), {zoom: 14, center: uluru})
                 var marker = new google.maps.Marker({position: uluru, map: map})
         
                 $check.on('change', function () {
-                    var uluru = JSON.parse(this.value)
+                    var uluru = JSON.parse($(this).attr('data-value'))
+                 
                     marker.setPosition(uluru)
                     map.setCenter(uluru)
                 })
