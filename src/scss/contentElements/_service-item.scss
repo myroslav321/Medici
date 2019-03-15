@@ -17,7 +17,7 @@
     padding-top: 100%;
     position: relative;
     z-index: 2;
-    // border-left: 5px solid $main-color;
+    border-left: 5px solid $main-color;
     pointer-events: none;
 }
 
@@ -45,6 +45,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 5px 20px;
+    border-left: 5px solid $main-color;
 }
 
 .touch .service-item__caption-header:after {
@@ -66,6 +67,10 @@
     .service-item {
         overflow: hidden;
         padding-top: 0;
+    }
+
+    .service-item__img:after {
+        border: none;
     }
 
     .service-item__caption-header {
@@ -91,7 +96,9 @@
     .service-item__caption-body {
         color: $white;
         padding: 10px 20px;
+        height: 100%;
         -webkit-font-smoothing: antialiased;
+        border-left: 5px solid $main-color;
     }
 
     .service-item:hover .service-item__caption {
