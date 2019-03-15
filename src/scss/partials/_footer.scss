@@ -26,7 +26,7 @@
     display: none;
 }
 
-.footer-info__social {
+.footer-info__social-wrp {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -44,10 +44,13 @@
 .footer-info__social p,
 .footer-info__contact-item p {
     line-height: 20px;
+    margin: 0;
+    color: $white;
 }
 
-.footer-info__contact-item p + p {
-    margin-top: 10px;
+.footer-info__social p:first-child,
+.footer-info__contact-item p:first-child {
+    margin-bottom: 10px;
 }
 
 .footer-info__contact-item + .footer-info__contact-item {
@@ -144,7 +147,7 @@
         margin-top: 0 !important;
     }
 
-    .footer-info__social {
+    .footer-info__social-wrp {
         justify-content: flex-start;
     }
 }
@@ -154,6 +157,7 @@
         display: flex;
         flex-wrap: wrap;
         padding-top: 40px;
+        align-items: flex-start;
         justify-content: space-between;
     }
 
@@ -163,8 +167,11 @@
     }
 
     .footer-info__social {
-        justify-content: flex-end;
         text-align: right;
+    }
+
+    .footer-info__social-wrp {
+        justify-content: flex-end;
     }
 }
 
