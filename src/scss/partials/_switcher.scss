@@ -24,6 +24,16 @@
     -webkit-font-smoothing: antialiased;
 }
 
+.section-switcher__option:focus,
+.section-switcher__option:hover {
+    color: $main-color;
+}
+
+.section-switcher__option._active:focus,
+.section-switcher__option._active:hover {
+    color: $white;
+}
+
 @media (min-width: 992px) {
     .section-switcher {
         display: table;
